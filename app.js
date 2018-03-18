@@ -1,17 +1,14 @@
 const express = require('express');
+var app = express();
 const bodyParser = require('body-parser');
 
-var {mongoose} = require('./database/mongoose');
-var { user } = require('./Models/User');
+var userRouter = require('./Routes/UserRouter');
 
-var app = express();
 
 app.use(bodyParser.urlencoded({ extended:false}));
 app.use(bodyParser.json());
 
-app.post('/user',(req,res)=>{
-    console.log(req.body);
-});
 
+app.use('/user',userRouter);
 
 module.exports = app;
