@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
     name:{
         type:String,
-        required:true,
+        required:true,       
         trim:true
     },
     email:{
@@ -17,5 +17,5 @@ var userSchema = new Schema({
         required:true
     }
 });
-var user = mongoose.model('User',userSchema);
-module.exports = {user};
+// var user = mongoose.model('User',userSchema);
+module.exports = {userSchema};
